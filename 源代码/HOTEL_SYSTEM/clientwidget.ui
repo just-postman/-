@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>clientWidget</class>
+ <widget class="QWidget" name="clientWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1050</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#frmLogin,QWidget#frmPopup,QWidget#frmHostInfo,QWidget#frmLogout,QWidget#frmConfig,QWidget#frmData,QWidget#frmDefence,QWidget#frmHost,QWidget#frmMain,QWidget#frmPwd,QWidget#frmSelect,QWidget#frmMessageBox{
+	
+	border:1px solid #454648;
+	border-radius:0px;	
+}
+.QFrame{
+	border:1px solid #B8B8B8;
+	border-radius:5px;
+}
+QWidget#widget_title{
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A);
+}
+QWidget
+{
+	
+	background-color: rgb(220, 220, 220);
+}
+QLabel#lab_Ico,QLabel#lab_Title{
+	border-radius:0px;
+	color: #F0F0F0;
+	background-color:rgba(0,0,0,0);
+	border-style:none;
+}
+
+QLineEdit {
+	border: 1px solid #B8B8B8;
+	border-radius: 5px;
+	padding: 2px;
+	background: none;
+	selection-background-color: #454648;
+}
+
+QLineEdit[echoMode=&quot;2&quot;] { 
+	lineedit-password-character: 9679; 
+}
+
+.QGroupBox{
+	border: 1px solid #B8B8B8;
+	border-radius: 5px;
+}
+
+/*提示标题*/
+.QToolTip
+{
+    background: #f6f5ec;        /*背景颜色*/
+    opacity:255;                /*透明度*/
+    border: 1px solid #130c0e;  /*边框宽度样式及颜色*/
+    color:#130c0e;              /*字体颜色*/
+}
+.QPushButton{
+	border-style: none;
+	border: 0px;
+	color: #F0F0F0;
+	padding: 5px;	
+	min-height: 20px;
+	border-radius:5px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+.QPushButton[focusPolicy=&quot;0&quot;] {
+	border-style: none;
+	border: 0px;
+	color: #F0F0F0;
+	padding: 0px;	
+	min-height: 10px;
+	border-radius:3px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+.QPushButton:hover{ 
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6);
+}
+
+.QPushButton:pressed{ 
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A);
+}
+
+QPushButton#btnMenu,QPushButton#btnMenu_Min,QPushButton#btnMenu_Max,QPushButton#btnMenu_Close{
+	border-radius:0px;
+	color: #F0F0F0;
+	background-color:rgba(0,0,0,0);
+	border-style:none;
+}
+
+QPushButton#btnMenu:hover,QPushButton#btnMenu_Min:hover,QPushButton#btnMenu_Max:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(25, 134, 199, 0), stop:1 #B8B8B8);
+}
+
+QPushButton#btnMenu_Close:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(238, 0, 0, 128), stop:1 rgba(238, 44, 44, 255));
+}
+
+QCheckBox {
+	spacing: 2px; 
+}
+
+QCheckBox::indicator {
+	width: 20px;
+	height: 20px;
+}
+
+QCheckBox::indicator:unchecked {
+	image: url(:/qss/clientcss/checkbox_unchecked.png);
+}
+
+QCheckBox::indicator:checked {
+	image: url(:/qss/clientcss/checkbox_checked.png); 
+}
+
+QRadioButton {
+	spacing: 2px;
+}
+
+QRadioButton::indicator {
+	width: 15px; 
+	height: 15px; 
+}
+
+QRadioButton::indicator::unchecked {
+	image: url(:/qss/clientcss/radio_normal.png); 
+}
+
+QRadioButton::indicator::checked {
+	image: url(:/qss/clientcss/radio_selected.png); 
+}
+
+QComboBox,QDateEdit{
+	border-radius: 3px;
+	padding: 1px 10px 1px 5px;
+	border: 1px solid #B8B8B8;
+}
+
+QComboBox::drop-down,QDateEdit::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 15px; 
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-left-color: #B8B8B8;
+}
+
+QComboBox::down-arrow,QDateEdit::down-arrow {
+	image: url(:/qss/clientcss/array_down.png); 
+}
+
+QMenu {
+	background-color:#F0F0F0;
+	margin: 2px;
+}
+
+QMenu::item {	
+	padding: 2px 12px 2px 12px;
+}
+
+QMenu::indicator {
+	width: 13px;
+	height: 13px;
+}
+
+QMenu::item:selected {
+	color: #F0F0F0;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QMenu::separator {
+	height: 1px;
+	background: #B8B8B8;
+}
+
+QProgressBar {
+	border-radius: 5px;
+	text-align: center;
+	border: 1px solid #B8B8B8;
+}
+
+QProgressBar::chunk {
+	width: 5px; 
+	margin: 0.5px;
+	background-color: #454648;
+}
+
+QSlider::groove:horizontal,QSlider::add-page:horizontal { 
+	background: #808080; 
+	height: 8px; 
+	border-radius: 3px; 
+}
+
+QSlider::sub-page:horizontal {
+	height: 8px; 
+	border-radius: 3px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QSlider::handle:horizontal {
+	width: 13px; 
+	margin-top: -3px; 
+	margin-bottom: -3px; 
+	border-radius: 6px;
+	background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,stop:0.6 #F0F0F0, stop:0.778409 #B8B8B8);
+}
+
+QSlider::handle:horizontal:hover {
+	background: qradialgradient(spread: pad, cx: 0.5, cy: 0.5, radius: 0.5, fx: 0.5, fy: 0.5, stop: 0.6 #F0F0F0,stop:0.778409 #454648);
+}
+
+QSlider::groove:vertical,QSlider::sub-page:vertical {
+	background:#808080; 
+	width: 8px; 
+	border-radius: 3px;
+}
+
+QSlider::add-page:vertical {
+	width: 8px;
+	border-radius: 3px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QSlider::handle:vertical {
+	height: 14px; 
+	margin-left: -3px;
+	margin-right: -3px;
+	border-radius: 6px;
+	background: qradialgradient(spread: pad, cx: 0.5, cy: 0.5, radius: 0.5, fx: 0.5, fy: 0.5, stop: 0.6 #F0F0F0, stop:0.778409 #B8B8B8);
+}
+
+QSlider::handle:vertical:hover {
+	background: qradialgradient(spread: pad, cx: 0.5, cy: 0.5, radius: 0.5, fx: 0.5, fy: 0.5, stop: 0.6 #F0F0F0,stop:0.778409 #454648);
+}
+
+QScrollBar:vertical {
+	width:10px; 
+	background-color:rgba(0,0,0,0%); 
+	padding-top:10px; 
+	padding-bottom:10px;
+}
+
+QScrollBar:horizontal {
+	height:10px; 
+	background-color:rgba(0,0,0,0%); 
+	padding-left:10px; padding-right:10px;
+}
+
+QScrollBar::handle:vertical {
+	width:10px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6); 
+}
+
+QScrollBar::handle:horizontal {
+	height:10px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6); 
+}
+
+QScrollBar::handle:vertical:hover {
+	width:10px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QScrollBar::handle:horizontal:hover {
+	height:10px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QScrollBar::add-line:vertical {
+	height:10px;
+	width:10px;
+	subcontrol-position: bottom; 
+	subcontrol-origin: margin;
+	border-image:url(:/qss/clientcss/add-line_vertical.png);
+}
+
+QScrollBar::add-line:horizontal {
+	height:10px;
+	width:10px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+	border-image:url(:/qss/clientcss/add-line_horizontal.png);
+}
+
+QScrollBar::sub-line:vertical {
+	height:10px;
+	width:10px;
+	subcontrol-position: top; 
+	subcontrol-origin: margin;
+	border-image:url(:/qss/clientcss/sub-line_vertical.png);
+}
+
+QScrollBar::sub-line:horizontal {
+	height:10px;
+	width:10px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+	border-image:url(:/qss/clientcss/sub-line_horizontal.png);
+}
+
+QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical {
+	width:10px;
+	background: #C0C0C0;
+}
+
+QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal {
+	height:10px;
+	background: #C0C0C0;
+}
+
+QScrollArea {
+	border: 0px ; 
+}
+
+QTreeView,QListView,QTableView{
+	border: 1px solid #B8B8B8; 
+	selection-background-color: #454648;
+	selection-color: #F0F0F0;
+}
+
+QTableView::item:selected, QListView::item:selected, QTreeView::item:selected {
+	color: #F0F0F0;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QTableView::item:hover, QListView::item:hover, QTreeView::item:hover {
+	color: #F0F0F0;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6); 
+}
+
+QTableView::item, QListView::item, QTreeView::item {
+	padding: 5px; 
+	margin: 0px; 
+}
+
+QHeaderView::section {
+	padding:3px;
+	margin:0px;
+	color:#F0F0F0;
+	border: 1px solid #F0F0F0;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6);
+}
+
+QTabBar::tab {
+	border-bottom-left-radius:0px;
+	border-bottom-right-radius:0px;
+	color: #F0F0F0;
+	min-width: 60px;
+	min-height: 20px;
+	padding: 3px 8px 3px 8px;
+	margin:1px;
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #B8B8B8, stop:1 #D6D6D6); 
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #454648, stop:1 #7A7A7A); 
+}
+
+QStatusBar::item {
+     border: 1px solid #B8B8B8;
+     border-radius: 3px;
+}
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="styleSheet">
+      <string notr="true">QToolButton
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 0px solid #b1b1b1;  /*边框宽度样式及颜色*/
+    color:#130c0e;              /*字体颜色*/
+    margin: 2px 2px 2px 2px;    /*外边距 上右下左*/
+}
+/*鼠标滑过*/
+QToolButton:hover
+{
+    background: #50b7c1;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*鼠标按下*/
+QToolButton:pressed
+{
+    background: #208791;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*选中状态*/
+QToolButton:checked
+{
+    background: #9ACD32;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QToolButton:checked:hover
+{
+    background: #7aad12;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_9">
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QToolButton" name="hotel_toolButton">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>酒店主页</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qicon.qrc">
+             <normaloff>:/icon/hotel.png</normaloff>:/icon/hotel.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="maximumSize">
+            <size>
+             <width>160</width>
+             <height>2</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_3" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QToolButton" name="findroom_toolButton">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>查询房间</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qicon.qrc">
+             <normaloff>:/icon/searchInfo.png</normaloff>:/icon/searchInfo.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_2">
+           <property name="maximumSize">
+            <size>
+             <width>160</width>
+             <height>2</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_5" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QToolButton" name="food_toolButton">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>入住客房</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qicon.qrc">
+             <normaloff>:/icon/tab04.png</normaloff>:/icon/tab04.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_3">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>2</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_7" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QToolButton" name="message_toolButton">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>留言专栏</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qicon.qrc">
+             <normaloff>:/icon/leavemessage.png</normaloff>:/icon/leavemessage.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line_5">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>2</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget_6" native="true">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QToolButton" name="Aboutus_toolButton">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+            </font>
+           </property>
+           <property name="text">
+            <string>关于我们</string>
+           </property>
+           <property name="icon">
+            <iconset resource="qicon.qrc">
+             <normaloff>:/icon/aboutus.png</normaloff>:/icon/aboutus.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>150</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="Line" name="line_4">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>2</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,5">
+      <item>
+       <widget class="QWidget" name="topwidget" native="true">
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>811</width>
+           <height>112</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="6,1,1">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Snap ITC</family>
+              <pointsize>36</pointsize>
+              <weight>50</weight>
+              <italic>true</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(140, 140, 140, 255);</string>
+            </property>
+            <property name="text">
+             <string>新华智慧科技酒店</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="time_lable">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::DefaultContextMenu</enum>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 255);</string>
+            </property>
+            <property name="text">
+             <string>显示时间</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="bottomwidget" native="true">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QStackedWidget" name="stackedWidget"/>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="qicon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

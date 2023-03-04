@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>registeruser</class>
+ <widget class="QWidget" name="registeruser">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>338</width>
+    <height>338</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">/*常规状态*/
+QPushButton
+{
+    background: #50b7c1;        /*背景颜色*/
+    opacity : 255;              /*背景透明度：0-255 */
+    border - radius: 5;         /*边框圆角半径，border-left，top，righ，bottom*/
+    color: #f6f5ec;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QPushButton:hover
+{
+    background: #40a7b1;    /*背景颜色*/
+    color: #f6f5ec;         /*字体颜色*/
+}
+/*鼠标按下*/
+QPushButton:pressed
+{
+    background: #3097a1;    /*背景颜色*/
+}
+/*选中*/
+QPushButton:checked
+{
+    background: #9acd32;    /*背景颜色*/
+    color: #ffffff;             /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QPushButton:checked:hover
+{
+    background: #8abd22;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*菜单箭头*/
+QPushButton::menu-indicator
+{
+    image: url(:/QSS/Resources/sls_QTreeView_xiajiantou_hover.png);  /*小箭头图标*/
+    /*image:none; /*无小箭头*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*鼠标滑过菜单箭头*/
+QPushButton::menu-indicator:hover
+{
+    image: url(:/QSS/Resources/sls_QTreeView_xiajiantou_hover.png);  /*小箭头图标*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*菜单箭头禁用*/
+QPushButton::menu-indicator:!enabled
+{
+    image: url(:/QSS/Resources/sls_QTreeView_xiajiantou_Disable.png);  /*小箭头图标*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*禁用*/
+QPushButton:!enabled
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #c3c3c5;  /*边框宽度样式及颜色*/
+    color: #c3c3c5;             /*字体颜色*/
+}
+/*以下为指定的控件，可删除*/
+QPushButton#ButtonMin,#ButtonClose,#ButtonRestore,#ButtonMax,#ButtonSheZhi
+{
+    /*background: #2d2d30; /*背景颜色*/
+    background: transparent;   /*透明背景*/
+    border: none; /*边框宽度样式及颜色*/
+    /*border: 1px solid #00a0e6; /*边框宽度样式及颜色*/
+}
+QPushButton#ButtonMin:hover,#ButtonClose:hover,#ButtonRestore:hover,#ButtonMax:hover,#ButtonSheZhi:hover
+{
+    /*border: 2px solid #00a0e6; /*边框宽度样式及颜色*/
+    background: rgba(62,65,69,1); /*背景颜色及透明度*/
+}
+/********************************************lingEdit编辑框*********************************************************/
+/*常规状态*/
+QLineEdit
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+    border-radius: 2;           /*倒角半径*/
+}
+/*获取焦点*/
+QLineEdit:focus
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+
+}
+/*鼠标滑过*/
+QLineEdit:hover
+{
+    border: 1px solid #50b7c1;  /*边框颜色*/
+}
+/*只读状态*/
+QLineEdit:read-only
+{
+    background:#d6d5cc; /*背景颜色*/
+    color: #635c5e;             /*字体颜色*/
+}</string>
+     </property>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>261</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url();</string>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>0</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑 Light</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(100, 100, 100);</string>
+       </property>
+       <property name="text">
+        <string>员工注册界面</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="widget_3" native="true">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>220</y>
+         <width>174</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url();</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="register_pushButton">
+          <property name="text">
+           <string>注册</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clear_pushButton">
+          <property name="text">
+           <string>清空</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_4" native="true">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>193</width>
+         <height>38</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url();</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>账号名：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="id_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_5" native="true">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>130</y>
+         <width>191</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url();</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>密码：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="pwd_lineEdit">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>170</y>
+         <width>211</width>
+         <height>38</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url();</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>确认密码：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="sure_lineEdit">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_7" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>221</width>
+         <height>36</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>协助员工id：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="workid_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

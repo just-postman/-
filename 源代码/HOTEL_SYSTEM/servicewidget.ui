@@ -1,0 +1,2233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>servicewidget</class>
+ <widget class="QWidget" name="servicewidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/*所有窗口控件去除虚线框*/
+*{
+    outline: none;             /*去除轮廓虚线框*/
+}
+/*所有窗口控件禁用状态*/
+*:!enabled
+{
+    background-color: #f6f5ec; /*背景颜色*/
+    border: 1px solid #c3c3c5; /*边框宽度样式及颜色*/
+    color: #c3c3c5;            /*字体颜色*/
+}
+
+QWidget
+{
+    background-color: #f6f5ec;  /*背景颜色*/
+    border: 0px solid #00ff00; /*边框宽度样式及颜色*/
+    border-radius: 4;           /*边框圆角半径*/
+    color: #130c0e;             /*字体颜色*/
+}
+/**********************************************菜单栏**************************************************************/
+QMenuBar
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 0px solid #f6f5ec;  /*边框宽度样式及颜色*/
+}
+/*菜单项*/
+QMenuBar::item
+{
+    background: transparent;        /*背景透明*/
+    border: 0px solid #7a7a7a;      /*边框宽度样式及颜色*/
+    padding: 5px 10px 5px 10px;     /*内边距 上右下左*/
+}
+/*鼠标滑过菜单栏item*/
+QMenuBar::item:selected
+{
+    background: #50b7c1;
+    color: #ffffff;
+}
+/*********************************************下拉菜单*************************************************************/
+QMenu
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    border-radius: 4;       /*倒角半径*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*下拉菜单项*/
+QMenu::item
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border-radius: 4;           /*倒角半径*/
+    padding: 0px 30px 0px 30px; /*内边距 上右下左*/
+    min-height: 30px;           /*高度*/
+}
+/*下拉菜单选中项*/
+QMenu::item:selected
+{
+    background: #50b7c1;    /*背景颜色*/
+    color: #ffffff;         /*字体颜色*/
+}
+/*下来菜单分隔线*/
+QMenu::separator
+{
+    background: #208791;    /*背景颜色*/
+    margin: 2px 7px 2px 7px; /*内边距 上右下左*/
+    height: 1px;            /*高度*/
+}
+/*指示器*/
+QMenu::indicator
+{
+    padding: 0px 2px 0px 3px;   /*内边距 上右下左*/
+    width: 25px;    /*宽度*/
+    height: 25px;   /*高度*/
+}
+/*指示器选中状态*/
+QMenu::indicator:checked
+{
+    image: url(:/qss/Resources/dagou.png);
+}
+/*图标*/
+QMenu::icon
+{
+    background: transparent;    /*背景颜色*/
+    padding: 0px 2px 0px 10px;   /*内边距 上右下左*/
+    width: 25px;    /*宽度*/
+    height: 25px;   /*高度*/
+}
+/*箭头*/
+QMenu::right-arrow
+{
+    padding: 0px 4px 0px 0px;   /*内边距 上右下左*/
+    image: url(:/qss/Resources/sls_QTreeView_youjiantou.png);
+}
+QMenu::right-arrow:selected
+{
+    image: url(:/qss/Resources/sls_QTreeView_xiajiantou_hover.png);
+}
+/**************************************************工具栏**********************************************************/
+QToolBar
+{
+    background: #f6f5ec;    /*背景颜色*/
+    border: none;           /*无边框*/
+    color:#130c0e;          /*字体颜色*/
+}
+/*工具条分隔线*/
+QToolBar::separator
+{
+    background: #208791;        /*背景颜色*/
+    margin: 3px 3px 3px 3px;    /*外边距 上右下左*/
+    width: 1px;                 /*宽度*/
+}
+/*拖动手柄*/
+QToolBar::handle
+{
+    /*image: url(handle.png);*/
+    /*background: #2e3135;    /*背景颜色*/
+    /*border: 1px dotted #74787c;  /*边框宽度样式及颜色*/
+}
+/*********************************************工具栏上的按钮*********************************************************/
+/*工具条按钮普通状态*/
+QToolButton
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 0px solid #b1b1b1;  /*边框宽度样式及颜色*/
+    color:#130c0e;              /*字体颜色*/
+    margin: 2px 2px 2px 2px;    /*外边距 上右下左*/
+    height:20;                  /*高度*/
+}
+/*鼠标滑过*/
+QToolButton:hover
+{
+    background: #50b7c1;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*鼠标按下*/
+QToolButton:pressed
+{
+    background: #208791;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*选中状态*/
+QToolButton:checked
+{
+    background: #9ACD32;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QToolButton:checked:hover
+{
+    background: #7aad12;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*提示标题*/
+QToolTip
+{
+    background: #f6f5ec;        /*背景颜色*/
+    opacity:255;                /*透明度*/
+    border: 1px solid #130c0e;  /*边框宽度样式及颜色*/
+    color:#130c0e;              /*字体颜色*/
+}
+/*******************************************QStatusBar状态栏*************************************************************/
+/*常规状态*/
+QStatusBar
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 2px ridge #005761;  /*边框宽度样式及颜色*/
+    border-radius: 0;           /*边框圆角半径*/
+    color: #130c0e;             /*字体颜色*/
+    margin-right: 0px;          /*右外边距*/
+}
+QStatusBar::item
+{
+    background: transparent;   /*透明背景*/
+    border: 0px solid #7a7a7a;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*针对状态栏内的控件设置样式*/
+QStatusBar QLabel
+{
+    /*background: #2e3135;        /*背景颜色*/
+    /*border:1px solid #00ff00;
+    /*color: #ff0000;             /*字体颜色*/
+}
+/********************************************pushButton按钮************************************************/
+/*常规状态*/
+QPushButton
+{
+    background: #50b7c1;        /*背景颜色*/
+    opacity : 255;              /*背景透明度：0-255 */
+    border - radius: 5;         /*边框圆角半径，border-left，top，righ，bottom*/
+    color: #f6f5ec;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QPushButton:hover
+{
+    background: #40a7b1;    /*背景颜色*/
+    color: #f6f5ec;         /*字体颜色*/
+}
+/*鼠标按下*/
+QPushButton:pressed
+{
+    background: #3097a1;    /*背景颜色*/
+}
+/*选中*/
+QPushButton:checked
+{
+    background: #9acd32;    /*背景颜色*/
+    color: #ffffff;             /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QPushButton:checked:hover
+{
+    background: #8abd22;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}
+/*菜单箭头*/
+QPushButton::menu-indicator
+{
+    image: url(:/qss/Resources/sls_QTreeView_xiajiantou_hover.png);  /*小箭头图标*/
+    /*image:none; /*无小箭头*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*鼠标滑过菜单箭头*/
+QPushButton::menu-indicator:hover
+{
+    image: url(:/qss/Resources/sls_QTreeView_xiajiantou_hover.png);  /*小箭头图标*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*菜单箭头禁用*/
+QPushButton::menu-indicator:!enabled
+{
+    image: url(:/qss/Resources/sls_QTreeView_xiajiantou_Disable.png);  /*小箭头图标*/
+    padding: 2px 2px 0px 0px;           /*内边距 上右下左*/
+    subcontrol-position: right center;  /*滑块位置，left左边，center中部，right右边,top顶，center中部，bottom底*/
+    subcontrol-origin: padding;         /*起始位置位于边缘 margin  border  padding  content*/
+}
+/*禁用*/
+QPushButton:!enabled
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #c3c3c5;  /*边框宽度样式及颜色*/
+    color: #c3c3c5;             /*字体颜色*/
+}
+/*以下为指定的控件，可删除*/
+QPushButton#ButtonMin,#ButtonClose,#ButtonRestore,#ButtonMax,#ButtonSheZhi
+{
+    /*background: #2d2d30; /*背景颜色*/
+    background: transparent;   /*透明背景*/
+    border: none; /*边框宽度样式及颜色*/
+    /*border: 1px solid #00a0e6; /*边框宽度样式及颜色*/
+}
+QPushButton#ButtonMin:hover,#ButtonClose:hover,#ButtonRestore:hover,#ButtonMax:hover,#ButtonSheZhi:hover
+{
+    /*border: 2px solid #00a0e6; /*边框宽度样式及颜色*/
+    background: rgba(62,65,69,1); /*背景颜色及透明度*/
+}
+/********************************************lingEdit编辑框*********************************************************/
+/*常规状态*/
+QLineEdit
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+    border-radius: 2;           /*倒角半径*/
+}
+/*获取焦点*/
+QLineEdit:focus
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+
+}
+/*鼠标滑过*/
+QLineEdit:hover
+{
+    border: 1px solid #50b7c1;  /*边框颜色*/
+}
+/*只读状态*/
+QLineEdit:read-only
+{
+    background:#d6d5cc; /*背景颜色*/
+    color: #635c5e;             /*字体颜色*/
+}
+/********************************************textEdit文本框*******************************************************/
+/*常规状态*/
+QTextEdit
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*获取焦点*/
+QTextEdit:focus
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QTextEdit:hover
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+}
+/**************************************************textBrowser*************************************************************/
+/*常规状态*/
+QTextBrowser
+{
+    background: #e6e5dc;    /*透明背景*/
+    color: #130c0e;         /*字体颜色*/
+}
+/**************************************************label静态文本*************************************************************/
+/*常规状态*/
+QLabel
+{
+    background: transparent;    /*透明背景*/
+    color: #130c0e;             /*字体颜色*/
+}
+QLabel#TitleContent,#TitleIcon
+{
+    background: transparent;    /*透明背景*/
+    color: #130c0e;             /*字体颜色*/
+}
+/****************************************************checkBox复选按钮********************************************************/
+/*常规状态*/
+QCheckBox
+{
+    color: #130c0e;              /*字体颜色*/
+    spacing: 2px;                /*文本与指示器的间隔*/
+}
+/*选中*/
+QCheckBox:checked
+{
+    color: #1d953f;              /*字体颜色*/
+}
+/*半选中*/
+QCheckBox:indeterminate
+{
+    color: #f47920;              /*字体颜色*/
+}
+/*鼠标滑过未选中状态*/
+QCheckBox:hover
+{
+    color: #938c8e;              /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QCheckBox:hover:checked
+{
+    color: #65c294               /*字体颜色*/
+}
+/*鼠标滑过半选中状态*/
+QCheckBox:hover:indeterminate
+{
+    color: #faa755               /*字体颜色*/
+}
+/*未选中时的禁用状态*/
+QCheckBox:!enabled
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #f6f5ec;  /*边框宽度样式及颜色*/
+    color: #c3c3c5;             /*字体颜色*/
+}
+/*选中时的禁用状态*/
+QCheckBox:checked:!enabled
+{
+    color: #c3c3c5;            /*字体颜色*/
+}
+/*指示器选中时的禁用状态*/
+QCheckBox:indeterminate:!enabled
+{
+    color: #c3c3c5;            /*字体颜色*/
+}
+/*指示器常规状态图标*/
+QCheckBox::indicator
+{
+    image: url(:/QSS/Resources/sls_CheckBox_weiXuanZhong.png);
+}
+/*指示器选中状态图标*/
+QCheckBox::indicator:checked
+{
+    image: url(:/qss/Resources/sls_CheckBox_xuanZhong.png);
+}
+/*指示器半选状态图标*/
+QCheckBox::indicator:indeterminate
+{
+    image: url(:/qss/Resources/sls_CheckBox_banXuanZhong.png);
+}
+/*指示器禁用状态图标*/
+QCheckBox::indicator:!enabled
+{
+    image: url(:/qss/Resources/sls_CheckBox_jinYong.png);
+}
+/*****************************************************radioButton单选按钮*********************************************/
+/*常规状态*/
+QRadioButton
+{
+    color: #130c0e;              /*字体颜色*/
+    spacing: 2px;                /*文本与指示器的间隔*/
+}
+/*选中*/
+QRadioButton:checked
+{
+    color: #1d953f;              /*字体颜色*/
+}
+/*鼠标滑过未选中状态*/
+QRadioButton:hover
+{
+    color: #938c8e;              /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QRadioButton:hover:checked
+{
+    color: #65c294
+}
+/*未选中时文本禁用状态*/
+QRadioButton:!enabled
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #f6f5ec;  /*边框宽度样式及颜色*/
+    color: #c3c3c5;             /*字体颜色*/
+}
+/*选中时禁用状态*/
+QRadioButton:checked:!enabled
+{
+    color: #c3c3c5;            /*字体颜色*/
+}
+/*指示器常规图标*/
+QRadioButton::indicator
+{
+    image: url(:/qss/Resources/sls_radioButton_off.png);
+}
+/*指示器选中状态图标*/
+QRadioButton::indicator:checked
+{
+    image: url(:/qss/Resources/sls_radioButton_on.png);
+}
+/*指示器禁用状态图标*/
+QRadioButton::indicator:!enabled
+{
+    image: url(:/qss/Resources/sls_radioButton_off_Disable.png);
+}
+/*指示器选中时禁用状态图标*/
+QRadioButton::indicator:checked:!enabled
+{
+    image: url(:/qss/Resources/sls_radioButton_on_Disable.png);
+}
+
+/******************************************************comboBox下拉列表框*********************************************/
+/*常规状态*/
+QComboBox
+{
+    background: #50b7c1;       /*背景颜色*/
+    border: 2px solid #50b7c1; /*边框宽度样式及颜色*/
+    border-radius: 4;          /*圆角半径*/
+    color: #f6f5ec;            /*字体颜色*/ 
+}
+/*下拉选择项背景颜色*/
+QComboBox QAbstractItemView
+{
+    background: #107781;                            /*背景颜色*/
+    border: 1px solid #64686c;                      /*边框宽度样式及颜色*/
+    color: #f6f5ec;                                 /*字体颜色*/
+    selection-background-color: rgba(105,153,158,150); /*选中项的背景颜色及透明度*/
+    selection-color: #ffffff;                       /*选中时的字体颜色*/
+}
+/*常规箭头图片*/
+QComboBox::down-arrow
+{
+    image: url(:/qss/Resources/sls_comboBox.png); /*资源文件夹里的图片*/
+}
+/*禁用是箭头图片*/
+QComboBox::down-arrow::!enabled
+{
+    image: url(:/qss/Resources/sls_comboBox_Disable.png); /*资源文件夹里的图片*/
+}
+/*箭头位置及去除背景*/
+QComboBox::drop-down
+{
+    background: transparent;        /*背景透明*/
+    border: 0px solid #74787c;      /*边框宽度样式及颜色*/
+    subcontrol-position: top right; /*改变默认位置*/
+    width: 20px;                    /*箭头距离右边框位置*/
+ }
+/*鼠标滑过常规状态*/
+QComboBox:hover
+{
+    background: #40a7b1;        /*背景颜色*/
+    border: 2px solid #40a7b1;  /*边框宽度样式及颜色*/
+}
+/*鼠标滑过焦点状态*/
+QComboBox:hover:focus
+{
+    background: #40a7b1;        /*背景颜色*/
+    border: 2px solid #40a7b1;  /*边框宽度样式及颜色*/
+}
+/*获取焦点*/
+QComboBox:focus
+{
+    background: #3097a1;        /*背景颜色*/
+    border: 2px solid #3097a1;  /*边框宽度样式及颜色*/
+}
+/*展开时文本下移*/
+QComboBox:on
+{
+    /*padding-top:3px;    /*内边距*/
+    /*padding-left:4px;   /*内边距*/
+}
+/******************************************tableWidget表格*********************************************************/
+/*常规状态*/
+QTableWidget
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    border-radius: 4;           /*圆角半径*/
+    /*gridline-color:  #74787c;   /*网格线颜色*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*左上角按钮*/
+QTableCornerButton::section
+{ 
+    background-color: #f6f5ec;  /*背景颜色*/
+    border: 0px solid #208791;  /*边框宽度样式及颜色*/
+    border-top-left-radius: 4;  /*圆角半径*/
+    color: #130c0e;             /*字体颜色*/
+ }
+/*行-列头*/
+QHeaderView
+{
+    background: #f6f5ec;    /*背景颜色*/
+    border: none;           /*无边框*/
+    /*border: 2px solid #74787c;  /*边框宽度样式及颜色*/
+    color: #130c0e;         /*字体颜色*/
+    min-height: 30px;       /*最小高度*/
+}
+/*垂直列头分隔线*/
+QHeaderView::section:horizontal
+{
+    border: none;                       /*去除分隔线*/
+    background: transparent;            /*透明背景*/
+    border-bottom: 3px solid #50b7c1;   /*下边框宽度样式及颜色*/
+    color: #130c0e;                     /*设置字体颜色*/
+}
+/*鼠标滑过列头*/
+QHeaderView::section:horizontal:hover
+{
+    background: #50b7c1;    /*背景颜色*/
+    color: #ffffff;         /*设置字体颜色*/
+}
+/*列头选中状态*/
+QHeaderView::section:horizontal:checked
+{
+    background: transparent;    /*透明背景*/
+    color: #50b7c1 ;            /*设置字体颜色*/
+}
+/*按下列头*/
+QHeaderView::section:horizontal:pressed
+{
+    background: #50b7c1;    /*背景颜色*/
+    color: #ffffff ;        /*设置字体颜色*/
+}
+
+/*水平行头分隔线*/
+QHeaderView::section:vertical
+{
+    border: none;                       /*去除分隔线*/  
+    background: transparent;            /*透明背景*/
+    border-right: 1px solid #208791;    /*右边框宽度样式及颜色*/
+    color: #130c0e;                     /*设置字体颜色*/
+    padding: 0px 2px 0px 5px;		/*内边距 上右下左*/
+}
+/*鼠标滑过行头*/
+QHeaderView::section:vertical:hover
+{
+    background: #50b7c1;
+    color: #ffffff;          /*设置字体颜色*/
+}
+/*行头选中状态*/
+QHeaderView::section:vertical:checked
+{    
+    background: transparent;    /*透明背景*/
+    color: #50b7c1 ;             /*设置字体颜色*/
+}
+/*按下行头*/
+QHeaderView::section:vertical:pressed
+{
+    background: #50b7c1;    /*背景颜色*/
+    color: #ffffff ;        /*设置字体颜色*/
+}
+/*单元格*/
+QTableView::item
+{
+    background: #f6f5ec;                /*背景颜色*/
+    border-right: 1px solid #f6f5ec;    /*边框宽度样式及颜色*/
+    border-bottom: 1px solid #f6f5ec;   /*边框宽度样式及颜色*/
+    color: #130c0e;                     /*设置字体颜色*/
+}
+/*鼠标滑过单元格*/
+QTableView::item:hover
+{
+    background: #50b7c1;     /*背景颜色*/
+    color: #ffffff;          /*设置字体颜色*/
+}
+/*选中单元格*/
+QTableView::item:selected
+{
+    background: #107781;    /*背景颜色*/
+    color: #ffffff ;        /*设置字体颜色*/
+}
+
+/***************************************************滚动条*********************************************************/
+/*水平滚动条-槽*/
+QScrollBar:horizontal
+{   
+    background: #107781;            /*背景颜色*/
+    /*border: 2px solid #525252;    /*边框宽度样式及颜色*/
+    border-radius:4px;              /*滚动条两端变成椭圆*/
+    margin: 0px 0px 0px 0px;        /*外边距 上右下左,此行不可省略*/
+    height: 20px;                   /*高度*/
+
+}
+/*水平滚动条*/
+QScrollBar::handle:horizontal
+{
+
+    background: #50b7c1;        /*背景颜色*/
+    border-radius:3px;          /*边框圆角半径*/
+    margin: 2px 20px 2px 20px;  /*外边距 上右下左,此行不可省略*/
+    min-height: 20px;           /*最小高度*/
+    min-width: 20px;            /*最小宽度*/
+    image: url(:/qss/Resources/sls_shuangxianghengjiantou.png); /*自定义图片*/
+}
+/*鼠标停留在水平滚动条上*/
+QScrollBar::handle:horizontal:hover
+{
+    background: #40a7b1;        /*背景颜色*/
+    border: 2px solid #40a7b1;  /*边框宽度样式及颜色*/
+}
+/*辅助器右按钮*/
+QScrollBar::add-line:horizontal
+{
+    /*background: transparent;    /*透明背景*/
+    background: #107781;        /*背景颜色*/
+    border: 2px solid #107781;  /*边框宽度样式及颜色*/
+    width: 16px;                /*宽度*/
+    height: 20px;               /*高度*/
+    subcontrol-position: right; /*滑块位置，left左边，center中部，right右边*/
+    subcontrol-origin: margin;  /*起始位置位于边缘*/
+}
+/*辅助器左按钮*/
+QScrollBar::sub-line:horizontal
+{
+    background: #107781;            /*背景颜色*/
+    border: 2px solid #107781;      /*边框宽度样式及颜色*/
+    width: 16px;                    /*宽度*/
+    height: 20px;                   /*高度*/
+    subcontrol-position: left;      /*滑块位置，left左边，center中部，right右边*/
+    subcontrol-origin: margin;      /*起始位置位于边缘*/
+    border-bottom-left-radius:6px;  /*滚动条两端变成椭圆*/
+}
+/*辅助器右按钮,鼠标滑过*/
+QScrollBar::add-line:horizontal:hover
+{
+    background: #005761;        /*背景颜色*/
+    border: 2px solid #005761;  /*边框宽度样式及颜色*/
+}
+/*辅助器左按钮,鼠标滑过*/
+QScrollBar::sub-line:horizontal:hover
+{
+    background: #005761;        /*背景颜色*/
+    border: 2px solid #005761;  /*边框宽度样式及颜色*/
+}
+/*滑块之外区域颜色*/
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+    background: none;   /*无背景颜色*/
+}
+/*左辅助器内容*/
+QScrollBar:left-arrow:horizontal
+{
+    image: url(:/qss/Resources/sls_zuoyi.png);  /*自定义图片*/
+}
+/*右辅助器内容*/
+QScrollBar:right-arrow:horizontal
+{
+    image: url(:/qss/Resources/sls_youyi.png);  /*自定义图片*/
+}
+
+/*垂直滚动条-槽*/
+QScrollBar:vertical
+{   
+    background: #107781;            /*背景颜色*/
+    border-radius:4px;              /*滚动条两端变成椭圆*/
+    margin: 0px 0px 0px 0px;        /*外边距 上右下左,此行不可省略*/
+    width: 20px;                    /*宽度*/
+}
+/*垂直滚动条*/
+QScrollBar::handle:vertical
+{
+
+    background: #50b7c1;        /*背景颜色*/
+    margin: 20px 2px 20px 2px;  /*外边距 上右下左*/
+    border-radius:3px;          /*滚动条两端变成椭圆*/
+    width: 20px;                /*宽度*/
+    min-height: 20px;           /*最小高度*/
+    image: url(:/qss/Resources/sls_shuangxiangshujiantou.png);    /*滑块上的图片*/
+}
+/*鼠标停留在垂直滚动条上*/
+QScrollBar::handle:vertical:hover
+{
+    background: #40a7b1;        /*背景颜色*/
+    border: 2px solid #40a7b1;  /*边框宽度样式及颜色*/
+}
+/*辅助器下*/
+QScrollBar::add-line:vertical
+{
+    background: #107781;            /*辅助器背景颜色*/
+    border: 2px solid #107781;      /*边框宽度样式及颜色*/
+    width: 20px;                    /*宽度*/
+    height: 16px;                   /*辅助器高度*/
+    subcontrol-position: bottom;    /*滑块位置，top顶部，center中部，bottom底部*/
+    subcontrol-origin: margin;      /*起始位置位于边缘*/
+}
+/*辅助器上*/
+QScrollBar::sub-line:vertical
+{
+    background: #107781;            /*辅助器背景颜色*/
+    border: 2px solid #107781;      /*边框宽度样式及颜色*/
+    border-top-right-radius:6px;    /*滚动条两端变成椭圆*/
+    width: 20px;                    /*宽度*/
+    height: 16px;                   /*辅助器高度*/
+    subcontrol-position: top;       /*滑块位置，top顶部，center中部，bottom底部*/
+    subcontrol-origin: margin;      /*起始位置位于边缘*/ 
+}
+/*辅助器下,鼠标滑过*/
+QScrollBar::add-line:vertical:hover
+{
+    background: #005761;        /*背景颜色*/
+    border: 2px solid #005761;  /*边框宽度样式及颜色*/
+}
+/*辅助器上,鼠标滑过*/
+QScrollBar::sub-line:vertical:hover
+{
+    background: #005761;        /*背景颜色*/
+    border: 2px solid #005761;  /*边框宽度样式及颜色*/
+}
+/*滑块之外区域*/
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+    background: none;   /*无背景*/
+}
+/*滑块上内容*/
+QScrollBar:up-arrow:vertical
+{
+    image: url(:/qss/Resources/sls_shangyi.png);    /*自定义图片*/
+
+}
+/*滑块下内容*/
+QScrollBar:down-arrow:vertical
+{
+    image: url(:/qss/Resources/sls_xiayi.png);  /*自定义图片*/
+
+}
+/***********************************************QListWidget********************************************************/
+/*常规状态*/
+QListWidget
+{
+    background-color: #f6f5ec;  /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    border-radius: 4;           /*圆角半径*/
+    color: #130c0e;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QListWidget::item:hover
+{
+    background: rgba(125,173,178,150); /*背景颜色及透明度*/
+    border-radius: 4;               /*圆角半径*/
+    color: #ffffff;                 /*字体颜色*/
+}
+/*选中*/
+QListWidget::item:selected:active
+{
+    background: #50b7c1;    /*背景颜色*/
+    border-radius: 4;       /*圆角半径*/
+    color: #ffffff;         /*字体颜色*/
+}
+/*选中非活跃状态*/
+QListWidget::item:selected:!active
+{
+    background: rgba(125,173,178,150); /*背景颜色及透明度*/
+    border-radius: 4;       /*圆角半径*/
+    color: #ffffff;         /*字体颜色*/
+}
+/*****************************************************QTabWidget选项卡********************************************************/
+/*客户区边框*/
+QTabWidget::pane
+{
+    background: transparent;        /*透明背景*/
+    border: 1px solid #208791;      /*边框宽度样式及颜色*/
+    border-top: 2px solid #50b7c1;  /*顶边框宽度样式及颜色*/
+}
+/*标签栏*/
+QTabWidget::tab-bar
+{
+    border: none;   /*无边框*/
+}
+/*标签*/
+QTabBar::tab
+{
+
+
+    background: #50b7c1;            /*背景颜色*/
+    border: none;                   /*无边框*/
+    border-top-left-radius: 4px;    /*标签左上角半径*/
+    border-top-right-radius: 4px;   /*标签右上角半径*/
+    color: #f6f5ec;                 /*字体颜色*/
+    margin: 0px 3px 0px 0px;        /*外边距 上右下左*/
+    padding: 0px 5px 0px 5px;       /*内边距 上右下左*/
+    height: 25px;                   /*高度*/
+    min-width: 25px;                /*最小宽度*/
+}
+/*鼠标滑过标签*/
+QTabBar::tab:hover
+{
+    background: #3097a1;    /*背景颜色*/
+    color: #ffffff;         /*字体颜色*/
+}
+/*选中标签*/
+QTabBar::tab:selected
+{
+    background: #107781;    /*背景颜色*/
+    color: #f6f5ec ;        /*字体颜色*/
+}
+/*******************************************QTreeWidget*************************************************************/
+/*常规状态*/
+QTreeWidget
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    border-radius: 4;           /*边框圆角半径*/
+    color: #130c0e;             /*字体颜色*/
+}
+
+QTreeWidget::item
+{
+    background: transparent;    /*背景颜色*/
+}
+
+QTreeWidget::branch
+{
+    background:transparent; /*背景颜色*/
+}
+/*鼠标滑过*/
+QTreeWidget::item:hover,QTreeWidget::branch:hover
+{
+    background: rgba(125,173,178,150);  /*背景颜色及透明度*/
+    color: #ffffff;                     /*字体颜色*/
+}
+/*选中*/
+QTreeWidget::item:selected,QTreeWidget::branch:selected
+{
+    background: #50b7c1;    /*背景颜色*/
+    color: #ffffff;         /*字体颜色*/
+}
+/*获取整行*/
+QTreeWidget
+{
+    show-decoration-selected: 1;
+}
+/*常规小箭头收起*/
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings
+{
+    image: url(:/QSS/Resources/sls_QTreeView_youjiantou.png);
+}
+/*常规小箭头展开*/
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings
+{
+    image: url(:/QSS/Resources/sls_QTreeView_xiajiantou.png);
+}
+/*鼠标滑过小箭头收起*/
+QTreeWidget::branch:closed:has-children:!has-siblings:hover,
+QTreeWidget::branch:closed:has-children:has-siblings:hover
+{
+    image: url(:/QSS/Resources/sls_QTreeView_youjiantou_hover.png);
+}
+/*鼠标滑过小箭头展开*/
+QTreeWidget::branch:open:has-children:!has-siblings:hover,
+QTreeWidget::branch:open:has-children:has-siblings:hover
+{
+    image: url(:/QSS/Resources/sls_QTreeView_xiajiantou_hover.png);
+}
+
+
+QTreeWidget::branch:!has-children:!has-siblings:adjoins-item
+{
+    border-image:none;
+}
+
+
+
+/*行-列头*/
+QTreeWidget QHeaderView
+{
+    background: #f6f5ec;    /*背景颜色*/
+    border: none;           /*无边框*/
+    /*border: 2px solid #74787c;  /*边框宽度样式及颜色*/
+    color: #130c0e;         /*字体颜色*/
+    min-height: 30px;       /*最小高度*/
+}
+/*垂直列头分隔线*/
+QTreeWidget QHeaderView::section:horizontal
+{
+    /*border: none;                       /*去除分隔线*/
+    background: transparent;            /*透明背景*/
+    border-bottom: 3px solid #50b7c1;   /*下边框宽度样式及颜色*/
+    color: #130c0e;                     /*设置字体颜色*/
+    padding: 0px 0px 0px 25px;          /*内边距 上右下左*/
+}
+
+/*******************************************QToolBox*************************************************************/
+/*常规状态*/
+QToolBox
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    border-radius: 2;           /*边框圆角半径*/
+    color: #f6f5ec;             /*字体颜色*/
+}
+/*标键卡*/
+QToolBox::tab
+{
+    background:#50b7c1;         /*背景颜色*/
+    border: 0px solid #3e4145;  /*边框宽度样式及颜色*/
+    border-radius:2px;          /*边框圆角半径*/
+    color:#f6f5ec;              /*字体颜色*/
+    margin-left: 2px;           /*左外边距*/
+    margin-right: 2px;          /*右外边距*/
+}
+/*鼠标滑过标签卡*/
+QToolBox::tab:hover
+{
+    background:#40a7b1; /*背景颜色*/
+    border-radius:2px;  /*边框圆角半径*/
+    color:#f6f5ec;      /*字体颜色*/
+}
+/*鼠标按下标签卡*/
+QToolBox::tab:pressed
+{
+    background:#3097a1; /*背景颜色*/
+    border-radius:2px;  /*边框圆角半径*/
+    color:#f6f5ec;      /*字体颜色*/
+}
+/*选中的标签*/
+QToolBox::tab:selected
+{
+    background: #107781;    /*背景颜色*/
+    color:#f6f5ec;          /*字体颜色*/
+}
+/*鼠标滑过选中的标签*/
+QToolBox::tab:selected:hover
+{
+    background: #3097a1;    /*背景颜色*/
+    color:#f6f5ec;          /*字体颜色*/
+}
+/**************************************************groupBox*******************************************************/
+/*常规状态*/
+QGroupBox
+{
+    background: transparent;    /*透明背景*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+    margin: 2.0ex 0ex 0ex 0ex;  /*文字在方框中位置的偏离度*/
+}
+/*标题位置*/
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top left;  /*标题位置*/
+    left:20px;                      /*标题相对与左边框位置*/
+    padding:0 2px;                  /*参数1.往下偏移，参数2.标题与边框的间距*/
+}
+
+/*************************************************调节器*********************************************************/
+/*水平槽*/
+QSlider#horizontalSlider::groove:horizontal
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #f6f5ec;  /*边框宽度样式及颜色*/
+    border-radius: 2px;         /*圆角半径*/
+    padding: 0px -1px 0px -1px; /*内边距 上右下左*/
+    height: 5px;                /*高度*/
+}
+/*滑块左边槽的颜色*/
+QSlider#horizontalSlider::sub-page:horizontal
+{
+    background: qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1,
+    stop: 0 #afdfe4, stop: 1 #50b7c1);                          /*背景线性渐变*/
+
+    border: 0px solid #00a0e6;  /*边框宽度样式及颜色*/
+    border-radius: 2px;         /*边框倒圆角半径*/
+    height: 10px;               /*高度*/   
+}
+/*滑块右边边槽的颜色*/
+QSlider#horizontalSlider::add-page:horizontal
+{
+    background: #005761;    /*背景颜色*/
+    border: 0px solid #2e3135; /*边框宽度样式及颜色*/
+    border-radius: 2px;     /*边框倒圆角半径*/
+    height: 10px;           /*高度*/
+}
+/*滑块*/
+QSlider#horizontalSlider::handle:horizontal
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #50b7c1, stop:0.778409 rgba(233, 233, 233, 255));                              /*背景辐射渐变*/
+
+    border-radius: 8px;         /*边框倒圆角半径*/
+    margin: -6px 0px -6px 0px;  /*外边距 上右下左*/
+    width: 16px;                /*宽度*/
+}
+/*鼠标滑过*/
+QSlider#horizontalSlider::handle:horizontal:hover
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #3097a1, stop:0.778409 rgba(255, 255, 255, 255));
+
+    border-radius: 8px;         /*边框倒圆角半径*/
+    margin: -6px 0px -6px 0px;  /*外边距 上右下左*/
+    width: 16px;                /*宽度*/
+}
+/*鼠标按下*/
+QSlider#horizontalSlider::handle:horizontal:pressed
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #3097a1, stop:0.778409 rgba(233, 233, 233, 255));
+
+    border-radius: 7px;         /*边框倒圆角半径*/
+    margin: -5px 0px -5px 0px;  /*外边距 上右下左*/
+    width: 14px;                /*宽度*/
+}
+
+/*垂直槽*/
+QSlider#verticalSlider::groove:vertical
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #f6f5ec;  /*边框宽度样式及颜色*/
+    border-radius: 2px;         /*圆角半径*/
+    padding: -1px 0px -1px 0px;	/*内边距 上右下左*/
+    width: 5px;                 /*高度*/
+}
+/*滑块上边槽的颜色*/
+QSlider#verticalSlider::sub-page:vertical
+{
+    background: #005761;        /*背景颜色*/
+    border: 0px solid #005761;  /*边框宽度样式及颜色*/
+    border-radius: 2px;         /*边框倒圆角半径*/
+    height: 10px;               /*高度*/
+}
+/*滑块下边槽的颜色*/
+QSlider#verticalSlider::add-page:vertical
+{
+    background: qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1,
+    stop: 0 #50b7c1, stop: 1 #afdfe4);
+
+    border: 0px solid #00a0e6;  /*边框宽度样式及颜色*/
+    border-radius: 2px;        /*边框倒圆角半径*/
+    height: 10px;               /*高度*/ 
+}
+/*滑块*/
+QSlider#verticalSlider::handle:vertical
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #50b7c1, stop:0.778409 rgba(233, 233, 233, 255));
+
+    border-radius: 8px; /*边框倒圆角半径*/
+    margin: 0px -6px 0px -6px;  /*外边距 上右下左*/
+    height: 16px;       /*高度*/
+}
+/*鼠标滑过*/
+QSlider#verticalSlider::handle:vertical:hover
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #3097a1, stop:0.778409 rgba(255, 255, 255, 255));
+
+    border-radius: 8px; /*边框倒圆角半径*/
+    margin: 0px -6px 0px -6px;  /*外边距 上右下左*/
+    height: 16px;       /*高度*/
+}
+/*鼠标按下*/
+QSlider#verticalSlider::handle:vertical:pressed
+{
+    background: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+    stop:0.6 #3097a1, stop:0.778409 rgba(233, 233, 233, 255));
+
+    border-radius: 7px; /*边框倒圆角半径*/
+    margin: 0px -5px 0px -5px;  /*外边距 上右下左*/
+    height: 14px;       /*高度*/
+}
+
+/*******************************************QSpinBox*************************************************************/
+/*常规状态*/
+QSpinBox
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 2px solid #208791;  /*边框宽度样式及颜色*/
+    color:#130c0e;              /*文本颜色*/
+}
+QSpinBox:hover
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 2px solid #50b7c1;  /*边框宽度样式及颜色*/
+}
+QSpinBox:focus
+{
+    background: #005761;        /*背景颜色*/
+    border: 2px solid #50b7c1;  /*边框宽度样式及颜色*/
+    color:#f6f5ec;              /*文本颜色*/
+}
+/*常规上按钮*/
+QSpinBox::up-button
+{
+    padding: 2px 1px 0px 0px;   /*内边距 上右下左*/
+    image:url(:/qss/Resources/sls_up.png);
+    min-width: 8px;                 /*最小宽度*/
+    min-height: 8px;                /*最小高度*/
+    subcontrol-position: right top; /*滑块位置，left左边，center中部，right右边*/
+    subcontrol-origin: margin;      /*起始位置位于边缘*/
+}
+/*常规下按钮*/
+QSpinBox::down-button
+{
+    padding: 0px 1px 2px 0px;   /*内边距 上右下左*/
+    image:url(:/QSS/Resources/sls_down.png);
+    min-width: 8px;
+    min-height: 8px;
+    subcontrol-position: right bottom;  /*滑块位置，left左边，center中部，right右边*/
+    subcontrol-origin: margin;          /*起始位置位于边缘*/
+}
+/*鼠标滑过上按钮*/
+QSpinBox::up-button:hover
+{
+    image:url(:/qss/Resources/sls_up_hover.png);
+    min-width: 8px;     /*最小宽度*/
+    min-height: 8px;    /*最小高度*/
+}
+/*鼠标滑过下按钮*/
+QSpinBox::down-button:hover
+{
+    image:url(:/qss/Resources/sls_down_hover.png);
+    min-width: 8px;     /*最小宽度*/
+    min-height: 8px;    /*最小高度*/
+}
+/*上按钮禁用*/
+QSpinBox::up-button:!enabled
+{
+    image:url(:/qss/Resources/sls_up_Disable.png);
+    min-width: 8px;     /*最小宽度*/
+    min-height: 8px;    /*最小高度*/
+}
+/*下按钮禁用*/
+QSpinBox::down-button:!enabled
+{
+    image:url(:/qss/Resources/sls_down_Disable.png);
+    min-width: 8px;     /*最小宽度*/
+    min-height: 8px;    /*最小高度*/
+}
+
+
+/*******************************************QProgressBar线*************************************************************/
+/*常规状态*/
+QProgressBar
+{
+    background: #005761;        /*背景颜色*/
+    border: 0px solid #ff0000;  /*边框宽度样式及颜色*/
+    border-radius: 4;           /*边框圆角半径*/
+    color: #f6f5ec;             /*字体颜色*/
+    margin-right: 0px;          /*右外边距*/
+    text-align: center;         /*文本位置*/
+}
+QProgressBar::chunk
+{
+    background: #50b7c1;    /*背景颜色*/
+    border-radius: 2;       /*边框圆角半径*/
+    width:5px;              /*每格宽度*/
+    margin:0.5px;           /*间距*/
+}
+/*******************************************QDial线*************************************************************/
+/*常规状态*/
+QDial
+{
+    background: #50b7c1;        /*背景颜色*/
+    border: 2px solid #ff0000;  /*边框宽度样式及颜色*/
+    color: #fff5ec;             /*字体颜色*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>0</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string> 前 台 管 理 界 面</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>781</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabBar::tab{width:110}</string>
+   </property>
+   <property name="tabPosition">
+    <enum>QTabWidget::North</enum>
+   </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="tab1">
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <attribute name="title">
+     <string>房间查询</string>
+    </attribute>
+    <widget class="QTableView" name="tableView">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>60</y>
+       <width>681</width>
+       <height>291</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>10</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <item>
+       <widget class="QComboBox" name="roomtype_combobox">
+        <item>
+         <property name="text">
+          <string>不限</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>单人间</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>双人房</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>家庭房</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>总统套间</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="roomstatus_combobox">
+        <item>
+         <property name="text">
+          <string>不限</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>空闲中</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>租用中</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>已预订</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="findroom_button">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>20</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查询</string>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>客户信息</string>
+    </attribute>
+    <widget class="QTableView" name="tableView_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>761</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget_9" native="true">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>10</y>
+       <width>321</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,0,0">
+      <item>
+       <widget class="QRadioButton" name="lived_radioButton">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+         </font>
+        </property>
+        <property name="text">
+         <string> 已入住客户</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="reserve_radioButton">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>已预订客户</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="username_Edit">
+        <property name="placeholderText">
+         <string>请输入名字</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="findAllButton">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>查询</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>客房预订</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>361</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string> 房间信息</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>321</width>
+        <height>61</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>361</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>选择房间</string>
+     </property>
+     <widget class="QTreeView" name="treeView">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>321</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_8">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>20</y>
+       <width>331</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>预订信息填写</string>
+     </property>
+     <widget class="QWidget" name="widget_6" native="true">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>20</y>
+        <width>241</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QWidget" name="widget_7" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string> 房间号</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="roomid_lineEdit_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_8" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>客户姓名</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="clientname_lineEdit_2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string> 联系方式</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="clientphone_lineEdit_2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QDateTimeEdit" name="dateTimeEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>180</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(162, 162, 243);</string>
+      </property>
+      <property name="dateTime">
+       <datetime>
+        <hour>0</hour>
+        <minute>0</minute>
+        <second>0</second>
+        <year>2022</year>
+        <month>1</month>
+        <day>1</day>
+       </datetime>
+      </property>
+      <property name="calendarPopup">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reserveButton">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>230</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>预订</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>登记入住</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>381</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="title">
+      <string> 入住信息填写</string>
+     </property>
+     <widget class="QWidget" name="widget_5" native="true">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>20</y>
+        <width>251</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string> 房间号</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="roomid_lineEdit">
+            <property name="placeholderText">
+             <string>填写已存在的房间号</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_3" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>客户姓名</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="clientname_lineEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>身份证号</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="clientid_lineEdit">
+            <property name="placeholderText">
+             <string>请输入18位正确的身份证号</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <family>微软雅黑</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string> 联系方式</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="clientphone_lineEdit">
+            <property name="placeholderText">
+             <string>请输入11位正确的手机号</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="clear_button">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>290</y>
+        <width>75</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>清空</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="signin_button">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>290</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> 登记入住</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_4" native="true">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>210</y>
+        <width>261</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>入住时间-&gt;</string>
+       </property>
+      </widget>
+      <widget class="QDateTimeEdit" name="dateTimeEdit">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>215</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(162, 162, 243);</string>
+       </property>
+       <property name="dateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>2022</year>
+         <month>1</month>
+         <day>1</day>
+        </datetime>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="showdate_button">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>10</y>
+         <width>91</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> 显示当前时间</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>续房、 取消预订</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>681</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="title">
+      <string>入住房客信息</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser_3">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>471</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_11" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_16">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>房间号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="continueroom_comboBox"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="continue_pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>50</y>
+        <width>58</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>续房</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>190</y>
+       <width>681</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+      </font>
+     </property>
+     <property name="title">
+      <string>预订房客信息</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser_4">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>20</y>
+        <width>471</width>
+        <height>101</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_12" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <item>
+        <widget class="QLabel" name="label_18">
+         <property name="font">
+          <font>
+           <family>微软雅黑</family>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>房间号</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="canceledReserve_comboBox"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="cancelReserve_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>40</y>
+        <width>58</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>取消预订</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>退房</string>
+    </attribute>
+    <widget class="QWidget" name="widget_10" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>房间号</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="exitroom_comboBox"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QCommandLinkButton" name="commandLinkButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>191</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>记录导出到本地Excel</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>20</y>
+       <width>471</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>入住房客信息</string>
+     </property>
+     <widget class="QTextBrowser" name="textBrowser_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>411</width>
+        <height>91</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>731</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>退房记录</string>
+     </property>
+     <widget class="QTableView" name="tableView_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>671</width>
+        <height>181</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="exit_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>63</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>退房</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>10</y>
+     <width>221</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>当前时间：</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
