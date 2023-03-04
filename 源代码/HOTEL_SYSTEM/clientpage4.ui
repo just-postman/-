@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>clientPage4</class>
+ <widget class="QWidget" name="clientPage4">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>717</width>
+    <height>518</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>591</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Algerian</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Q1</string>
+      </property>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>481</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1,1,1">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>华文仿宋</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>您对该酒店的服务感到：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="service_radioButton_1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>满意</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="service_radioButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>一般</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="service_radioButton_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>较差</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="Line" name="line">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>661</width>
+        <height>2</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>2</height>
+       </size>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>0</y>
+        <width>601</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>华文仿宋</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>为了用户更好的体验，我们诚邀您进行新华大酒店的内部调查评价</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>150</y>
+        <width>591</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Algerian</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Q2</string>
+      </property>
+      <widget class="QWidget" name="widget_3" native="true">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>481</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1,1,1">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>华文仿宋</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>您对该酒店的卫生感到：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="clean_radioButton_1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>满意</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="clean_radioButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>一般</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="clean_radioButton_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>较差</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>200</y>
+        <width>591</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Algerian</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Q3</string>
+      </property>
+      <widget class="QWidget" name="widget_4" native="true">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>10</y>
+         <width>481</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,1,1,1">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>华文仿宋</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>您对酒店环境感到：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="around_radioButton_1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>满意</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="around_radioButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>一般</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="around_radioButton_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>较差</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>591</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Algerian</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Q4</string>
+      </property>
+      <widget class="QWidget" name="widget_6" native="true">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>511</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3,1,1,1">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>华文仿宋</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>您觉得酒店的保密工作做的：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="secret_radioButton_1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>很好</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="secret_radioButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>一般</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="secret_radioButton_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>较差</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>300</y>
+        <width>591</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Algerian</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Q5</string>
+      </property>
+      <widget class="QWidget" name="widget_5" native="true">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>511</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="3,1,1,1">
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="font">
+           <font>
+            <family>华文仿宋</family>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>您对酒店的整体消费觉得：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="price_radioButton_1">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>消费较高</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="price_radioButton_2">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>消费一般</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="price_radioButton_3">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>性价比很高</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>360</y>
+        <width>591</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>等线 Light</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string>建议</string>
+      </property>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>561</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>请针对我们工作中的不到位提出您宝贵的建议</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>110</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>提交</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_7">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>40</y>
+        <width>192</width>
+        <height>43</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>华文仿宋</family>
+        <pointsize>11</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>请先选择房间</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

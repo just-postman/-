@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>850</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/image/mainbg.jpg);
+
+
+</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>80</y>
+      <width>261</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget{
+border-image:url();
+
+}</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="3,3,2,2">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="styleSheet">
+        <string notr="true">border-image:url();
+background-color: rgba(198, 198, 198, 150);</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="count">
+          <property name="font">
+           <font>
+            <family>微软雅黑 Light</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image:url();
+background-color: rgba(0,0,0,0);</string>
+          </property>
+          <property name="text">
+           <string>账号：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="idlineEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>账号不能为空</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="styleSheet">
+        <string notr="true">border-image:url();
+background-color: rgba(198, 198, 198, 150);</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,5">
+        <item>
+         <widget class="QLabel" name="passwd">
+          <property name="font">
+           <font>
+            <family>微软雅黑 Light</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image:url();
+background-color: rgba(0,0,0,0);</string>
+          </property>
+          <property name="text">
+           <string>密码：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="pwdlineEdit">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="cursor">
+           <cursorShape>IBeamCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="placeholderText">
+           <string>密码不能为空</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_5" native="true">
+       <property name="styleSheet">
+        <string notr="true">border-image:url();
+background-color: rgba(198, 198, 198, 150);</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QRadioButton" name="service_Button">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image:url();
+background-color: rgba(0,0,0,0);</string>
+          </property>
+          <property name="text">
+           <string>前台</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="client_button">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image:url();
+background-color: rgba(0,0,0,0);</string>
+          </property>
+          <property name="text">
+           <string>客户</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="shopkeeper_button">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-image:url();
+background-color: rgba(0,0,0,0);</string>
+          </property>
+          <property name="text">
+           <string>店长</string>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget_4" native="true">
+       <property name="styleSheet">
+        <string notr="true">border-image:url();
+background-color: rgba(198, 198, 198, 150);</string>
+       </property>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>81</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">/*常规状态*/
+QPushButton
+{
+    background: #50b7c1;        /*背景颜色*/
+    opacity : 255;              /*背景透明度：0-255 */
+    border - radius: 5;         /*边框圆角半径，border-left，top，righ，bottom*/
+    color: #f6f5ec;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QPushButton:hover
+{
+    background: #40a7b1;    /*背景颜色*/
+    color: #f6f5ec;         /*字体颜色*/
+}
+/*鼠标按下*/
+QPushButton:pressed
+{
+    background: #3097a1;    /*背景颜色*/
+}
+/*选中*/
+QPushButton:checked
+{
+    background: #9acd32;    /*背景颜色*/
+    color: #ffffff;             /*字体颜色*/
+}
+/*鼠标滑过选中状态*/
+QPushButton:checked:hover
+{
+    background: #8abd22;    /*背景颜色*/
+    color:#ffffff;          /*字体颜色*/
+}</string>
+        </property>
+        <property name="text">
+         <string>登录</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="register_2">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>20</y>
+          <width>108</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(74, 0, 222,255);
+border-image:url();
+</string>
+        </property>
+        <property name="text">
+         <string>没有账号？点击注册</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="welcome">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>30</y>
+      <width>431</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>28</pointsize>
+      <weight>50</weight>
+      <italic>true</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image:url();
+color: rgba(99, 99, 99, 250);
+</string>
+    </property>
+    <property name="text">
+     <string>新华智慧科技酒店欢迎您</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

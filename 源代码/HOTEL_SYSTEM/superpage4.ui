@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>superPage4</class>
+ <widget class="QWidget" name="superPage4">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>691</width>
+    <height>533</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>641</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>退房管理</string>
+      </property>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>10</y>
+         <width>232</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="placeholderText">
+           <string>请输入退房人姓名</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>查找</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>641</width>
+        <height>411</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

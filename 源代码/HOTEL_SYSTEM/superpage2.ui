@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>superPage2</class>
+ <widget class="QWidget" name="superPage2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>673</width>
+    <height>505</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string notr="true">员工信息管理</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>620</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>员工管理</string>
+       </property>
+       <widget class="QWidget" name="widget" native="true">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>10</y>
+          <width>232</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="placeholderText">
+            <string>输入员工id</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="find_pushButton">
+           <property name="text">
+            <string> 查找</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QTableView" name="tableView">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>621</width>
+         <height>371</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>添加员工信息</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>341</width>
+         <height>351</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>员工信息填写</string>
+       </property>
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>301</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <widget class="QLineEdit" name="name_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>10</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>员工姓名</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="workid_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>40</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>员工workid</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="age_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>70</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>员工年龄</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="phone_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>100</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>11位联系电话</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="address_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>159</y>
+           <width>261</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>家庭住址</string>
+         </property>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>190</y>
+           <width>211</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>入职时间</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QDateTimeEdit" name="dateTimeEdit">
+            <property name="dateTime">
+             <datetime>
+              <hour>12</hour>
+              <minute>0</minute>
+              <second>0</second>
+              <year>2022</year>
+              <month>5</month>
+              <day>1</day>
+             </datetime>
+            </property>
+            <property name="date">
+             <date>
+              <year>2022</year>
+              <month>5</month>
+              <day>1</day>
+             </date>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="widget_3" native="true">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>260</y>
+           <width>211</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="add_pushButton">
+            <property name="text">
+             <string>添加</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="clear_pushButton">
+            <property name="text">
+             <string>清空</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLineEdit" name="idcard_lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>130</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>18位身份证号</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>员工密码重置</string>
+      </attribute>
+      <widget class="QTableView" name="tableView_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>531</width>
+         <height>341</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
